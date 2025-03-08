@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yousef Al Hashemi">
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/jquery-3.6.3.min.js"></script>
+    <script src="scripts/gitCommits.js" defer></script>
+    <title>Project: Twitch Clips</title>
+</head>
+
+<body>
+    <div id="navBar" name="dropdownMenu">
+        <!-- offsite icons -->
+        <a class="imgLink" href="https://github.com/Yalhash"><img id="githubIcon" src="assets/githubIcon.svg"
+                alt="Github logo, linked to my account"></a>
+        <a class="imgLink" href="https://www.linkedin.com/in/yousefalhashemi"><img id="linkedinIcon"
+                src="assets/linkedinIcon.png" alt="LinkedIn logo, linked to my account"></a>
+
+        <!-- Dropdown -->
+        <div class="hamburger">
+            <div class="menubar1"></div>
+            <div class="menubar2"></div>
+            <div class="menubar3"></div>
+
+            <div class="dropdownLinks">
+                <a href="index.html"> Home </a>
+                <a href="aboutMe.html"> About Me </a>
+                <a href="roome.html"> RoomE </a>
+                <a href="sortingVisualizer.html"> Sorting Visualizer </a>
+                <a href="resume.pdf"> Resume </a>
+            </div>
+        </div>
+    </div>
+    <h1 class = "title">
+        Twitch Clipper
+    </h1>
+    <img class="mainImage" src="assets/twitchLogo.png" alt="A picture of the robot called RoomE">
+    <h2> 
+        <a href="https://github.com/Yalhash/AutomatedClippingChannel"> Github Page </a>
+    </h2>
+
+    <p>
+        Twitch Clipper was a scraping bot I made to create 10 minute videos of highlights from twitch streams. 
+        I had the idea when I was watching a video of twitch clips put into a compilation and thought that it 
+        was such a simple task that I could probably automate it myself.
+    </p>
+    <p>
+        The task ended up having many interesting challenges, and became a great learning opportunity. 
+        First of all, like many modern websites, Twitch generates much of the page via dynamic javascript. This means
+        it is impossible to simply use a GET request to fetch the page you want to visit and parse the data from there.
+        This is because the resulting HTML which is fetched does not include all of the main content dynamically loaded.
+        My solution was to use the selenium library. This library uses a browser's webdriver to load dynamic content 
+        and interact with the website using scripts to target different elements on the page programatically.
+    </p>
+
+    <p>
+        I coded this project with a functional programming paradigm in mind since I find this easiest to visualize and maintain.
+        This is a little difficult since the webdriver object had to be passed around, and obviously had its own state. 
+        The bulk of the code was parsing the metadata of the different pages and then using this data to determine 
+        which videos to download. This decision was made based on the number of views on the clips and the length of the clips. 
+        The clips were essentially chosen by popularity, and chosen until there was 10 minutes worth of clips to use.
+    </p>
+
+    <p>
+        Since on the twitch clips website the clips are stored as video files which can be downloaded directly, 
+        there was no need to use a stream based video downloader. The open source command line video editing tool FFMPEG
+        was used to compile all of the videos together. FFMPEG is quite powerful and so I was also able to add titles to each of the clips.
+        I simply took the title which the user who originally clipped the video used since this would add more context then I would be 
+        able to extract, and often also added its own comedy to the clip.
+    </p>
+
+    <hr>
+    <h2> 
+        Latest Activity
+    </h2>
+
+    <table>
+        <tr>
+            <th>Message:</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>

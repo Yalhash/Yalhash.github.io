@@ -1,0 +1,117 @@
+@import "main.css";
+
+#headshot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40em;
+    width: auto;
+    padding-bottom: 1em;
+}
+
+#mainTitle {
+    display: block;
+    align-self: center;
+}
+
+#searchSection {
+    padding-bottom: 3em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchBar {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.1em;
+    height: auto;
+    width: 40vw;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    background-color: var(--alt-color1-transparent);
+    border: var(--alt-color1);
+    border-radius: 1em;
+    font-size: 20px;
+}
+
+#searchDropdown {
+    display: block;
+    background-color: var(--main-color);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding-top: -1em;
+}
+
+#searchDropdown div {
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: center;
+    height: auto;
+    width: 35vw;
+}
+
+/* recolor the link boxes on hover */
+#searchDropdown div:hover {
+    background-color: #ddd;
+}
+/* Classes used to toggle hiding the search bar & search results*/
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.downArrow {
+    height: 2em;
+    width: 2em;
+    float: right;
+}
+
+.projectDiv {
+    display: flex;
+}
+
+.projectImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 2em;
+    height: 30em;
+    width: auto;
+    cursor: pointer;
+}
+
+#overlay{
+    opacity:0.8;
+    background-color: var(--alt-color2);
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+
+.projectText {
+    size: auto;
+}
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+    height: auto;
+}
+
+table, td {
+    padding: 2px;
+    border-radius: 2%;
+    border: 2px solid;
+    border-color: var(--alt-color1);
+    text-align: center;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yousef Al Hashemi">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="scripts/jquery-3.6.3.min.js"></script>
+    <script src="scripts/stickyNav.js"></script>
+    <script src="scripts/search.js" defer></script>
+    <script src="scripts/toc.js"></script>
+    <script src="scripts/expandImg.js"></script>
+    <script src="scripts/stackoverflowAnswers.js" defer></script>
+
+    <title>Yousef's Portfolio</title>
+</head>
+
+<body>   
+    <div id="overlay" class="hidden"></div>
+    <div class="content">
+        <h1 id="mainTitle">Yousef Al Hashemi</h1>
+        <img id="headshot" src="assets/headshot.jpg" alt="A picture of Yousef Al Hashemi">
+    </div>
+    <div id="stickyBar" name="dropdownMenu">
+        <!-- offsite icons -->
+        <a class="imgLink" href="https://github.com/Yalhash"><img id="githubIcon" src="assets/githubIcon.svg"
+                alt="Github logo, linked to my account"></a>
+        <a class="imgLink" href="https://www.linkedin.com/in/yousefalhashemi"><img id="linkedinIcon"
+                src="assets/linkedinIcon.png" alt="LinkedIn logo, linked to my account"></a>
+
+        <!-- Dropdown -->
+        <div class="hamburger">
+            <div class="menubar1"></div>
+            <div class="menubar2"></div>
+            <div class="menubar3"></div>
+
+            <!-- This set of links will become a dropdown menu -->
+            <div class="dropdownLinks">
+                <a href="aboutMe.html"> About Me </a>
+                <a href="roome.html"> RoomE </a>
+                <a href="twitchClips.html"> Twitch Clipper </a>
+                <a href="sortingVisualizer.html"> Sorting Visualizer </a>
+                <a href="resume.pdf"> Resume </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="content">
+        <!-- First Text Section -->
+        <span name="aboutMeText">
+            <h2>
+                <a id="section0" href="aboutMe.html"> About Me </a>
+            </h2>
+            <p class="SearchIndex_0">
+                I am an undergraduate computer science student at McMaster University, I love programming, hacking, classic
+                liturature, sports, and music. This website mainly focuses on the first two. I interned at Intel from May
+                2020 to August 2021, and at Questrade from May 2022 to August 2022. In the meantime I created the projects
+                listed below.
+            </p>
+        </span>
+
+        <hr/>
+        <h2>
+            Projects
+        </h2>
+        <span name="project1">
+            <h3>
+                <a id="section1" href="roome.html"> RoomE     </a>
+            </h3>
+            <div class="projectDiv">
+                
+                <p class="projectText SearchIndex_1">
+                    RoomE was a capstone project on my Computer Science degree. It was a robot built from the ground up which
+                    would out an area using lidar via exploration. I created the code for a majority of the systems including
+                    the pathfinding algorithm, the frontier exploration algorithm, interpreting the lidar data, and
+                    communicating via USB to the drive train system. The project was a great challenge and included many
+                    opportunities to solve algorithmic problems as well as the practical issues that come up with putting a
+                    large project together.
+                </p>
+                <img class="projectImg" src="assets/roome.jpg" alt="A picture of the robot called RoomE">
+            </div>
+        </span>
+        <hr/>
+        <span name="project2">
+            <h3>
+                <a id="section2" href="twitchClips.html"> Twitch Clipper </a>
+            </h3>
+            <div class="projectDiv">
+                
+                <p class="projectText SearchIndex_2">
+                    Twitch Clipper was a scraping bot I made to create 10 minute videos of highlights from twitch streams.
+                    I had the idea when I was watching a video of twitch clips put into a compilation and thought that it was such
+                    a simple task that I could probably automate it. The end result was a bot that given a list of channels and a game will find 
+                    recent popular clips for those channels and edit together a video of those clips.
+                </p>
+                <img class="projectImg" src="assets/twitchLogo.png" alt="A picture of the twitch logo">
+            </div>
+        </span>
+        <hr/>
+        <span name="project3">
+            <h3>
+                <a id="section3" href="sortingVisualizer.html"> Sorting Visualizer </a>
+            </h3>
+            <div class="projectDiv">
+                
+                <p class="projectText SearchIndex_3">
+                    Sorting Visualizer was one of my first personal projects. I made it in order to explore sorting algorithms in an interesting way.
+                    I was inspired by videos on Youtube called "The sounds of sorting", wherin bars of various lengths were scrambled and sorted with different algorithms, 
+                    and each comparison and swap would play a sound. My take on this was to create a program which would create videos of images being 
+                    scrambled and then sorted with the sorting algorithm or algorithms of the user's choice.
+                </p>
+                <img class="projectImg" src="assets/sortingVis.png" alt="A screenshot of the command line interface showing all of the options for the program">
+            </div>
+        </span>
+    </div>
+    
+</body>
+
+</html>

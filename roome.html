@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yousef Al Hashemi">
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/jquery-3.6.3.min.js"></script>
+    <script src="scripts/gitCommits.js" defer></script>
+    <title>Project: RoomE</title>
+</head>
+
+<body>
+    <div id="navBar" name="dropdownMenu">
+        <!-- offsite icons -->
+        <a class="imgLink" href="https://github.com/Yalhash"><img id="githubIcon" src="assets/githubIcon.svg"
+                alt="Github logo, linked to my account"></a>
+        <a class="imgLink" href="https://www.linkedin.com/in/yousefalhashemi"><img id="linkedinIcon"
+                src="assets/linkedinIcon.png" alt="LinkedIn logo, linked to my account"></a>
+
+        <!-- Dropdown -->
+        <div class="hamburger">
+            <div class="menubar1"></div>
+            <div class="menubar2"></div>
+            <div class="menubar3"></div>
+
+            <div class="dropdownLinks">
+                <a href="index.html"> Home </a>
+                <a href="aboutMe.html"> About Me </a>
+                <a href="twitchClips.html"> Twitch Clipper </a>
+                <a href="sortingVisualizer.html"> Sorting Visualizer </a>
+                <a href="resume.pdf"> Resume </a>
+            </div>
+        </div>
+    </div>
+    <h1 class="title">
+        RoomE
+    </h1>
+    <img class="mainImage" src="assets/roome.jpg" alt="A picture of the robot called RoomE">
+    <h2>
+        <a href="https://github.com/Yalhash/RoomE"> Github Page </a>
+    </h2>
+
+    <p>
+        RoomE was a robot built from the ground up which would out an area using lidar via exploration. I created the
+        code for a majority of the systems including the pathfinding algorithm, the frontier exploration algorithm,
+        interpreting the lidar data, and
+        communicating via USB to the drive train system. The project was a great challenge and included many
+        opportunities to solve algorithmic problems as well as the practical issues that come up with putting a large
+        project together.<br> RoomE
+        had 5 different software components:
+    </p>
+
+    <ol>
+        <li>Lidar Interface</li>
+        <li>RoomE Map</li>
+        <li>RoomE Navigation</li>
+        <li>Drive Train Calculations</li>
+        <li>Serial Communication</li>
+    </ol>
+
+    <p>
+        To give an overview of each, the lidar interface got data from the lidar and converted it into a form usable by
+        the RoomE Map. The RoomE Map stored the overall map as a grid, held the orientation information of the RoomE,
+        and could be updated by new scans
+        in new locations using Continuous Iterative Closest Point (CICP) to correct for mistakes in the scans or the
+        orientation updates. The RoomE Navigation component used the RoomE Map to find new areas to explore called
+        frontiers, and provided a set
+        of points that the RoomE would take to get to the new location. The Drive Train Calculations component was
+        responsible for taking the points produced by the navigation and formatting them so that the drive train could
+        understand them, and was
+        also responsible for translating the odometry information from the drive train into orientation update
+        information that could be used by the RoomE Map component. The Serial Communication component worked as a two
+        way interface for communications
+        between the drive train and the Drive Train calcualtions component. I was responsible for creating all of the
+        software components except for the Drive Train Calculations component.
+    </p>
+
+    <p>
+        The flow of the program was to scan, update the map, find a new navigation target, navigate to that area,
+        calculate an approximate new location coordinate, and repeat until there were no more frontiers to explore. The
+        final map would then be saved.
+    </p>
+
+    <p>
+        The Lidar Interface is very simplistic, it only takes the output from the lidar module and
+        converts it into a data type which can be interpreted by the RoomE Map. The only caveat is that the degree 0 was
+        shifted by an integer that
+        was discovered via experimentation. The lidar only gave an array of values denoting how far away each ray was,
+        and the degree that the ray was shot from was denoted by the index in the array, I found that the degree 0 was
+        not the 0'th element
+        of the array, and found a shift was necessary to find the true zero degree.
+    </p>
+    <p>
+        The RoomE Map used an occupancy grid map, where each of the points on the grids were either occupied,
+        unoccupied or unknown, it was a fuzzy representation such that 0 was definitely occupied, 1 was definitely
+        unoccupied, and then anything
+        inbetween was an estimate at certainty, with 0.5 as completely unknown.
+    </p>
+    <p>
+        The RoomE Navigation component takes the occupancy grid map, and uses breadth first search to walk through
+        the grid through the unoccupied squares. It finds all of the frontiers which are locations which are borders of
+        unoccupied and unknown
+        areas. The entire set of unknown points which are neighbors with eachother and a known unoccupied point are
+        considered a single frontier. For instance if RoomE made a scan in a hallway, it would see a frontier for each
+        open door which it cannot
+        see into.
+    </p>
+    <p>
+        The Serial Communication component is very simple and sends and recieves commands in an agreed upon format
+        with the Arduino running the drive train. The drive train can only understand time to move the right and left
+        wheel so it depends on
+        the Drive Train Calculations component to transform the navigation points into wheel rotations. The Arduino then
+        sends back the number of rotations of each wheel which can be used to calculate the new position more accurately
+        which can then be
+        used by the map system to adjust for any error.
+    </p>
+    <hr>
+    <h2> 
+        Latest Activity
+    </h2>
+
+    <table>
+        <tr>
+            <th>Message:</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>

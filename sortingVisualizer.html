@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yousef Al Hashemi">
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/jquery-3.6.3.min.js"></script>
+    <script src="scripts/gitCommits.js" defer></script>
+    <title>Project: RoomE</title>
+</head>
+
+<body>
+    <div id="navBar" name="dropdownMenu">
+        <!-- offsite icons -->
+        <a class="imgLink" href="https://github.com/Yalhash"><img id="githubIcon" src="assets/githubIcon.svg"
+                alt="Github logo, linked to my account"></a>
+        <a class="imgLink" href="https://www.linkedin.com/in/yousefalhashemi"><img id="linkedinIcon"
+                src="assets/linkedinIcon.png" alt="LinkedIn logo, linked to my account"></a>
+
+        <!-- Dropdown -->
+        <div class="hamburger">
+            <div class="menubar1"></div>
+            <div class="menubar2"></div>
+            <div class="menubar3"></div>
+
+            <div class="dropdownLinks">
+                <a href="index.html"> Home </a>
+                <a href="aboutMe.html"> About Me </a>
+                <a href="twitchClips.html"> Twitch Clipper </a>
+                <a href="roome.html"> RoomE </a>
+                <a href="resume.pdf"> Resume </a>
+            </div>
+        </div>
+    </div>
+    <h1 class="title">
+        Sorting Visualizer
+    </h1>
+    <img class="mainImage" src="assets/sortingVis.png" alt="A picture of the robot called RoomE">
+    <h2>
+        <a href="https://github.com/Yalhash/sortingVisualizer"> Github Page </a>
+    </h2>
+
+    <p>
+        Sorting Visualizer was one of my first personal projects. I made it in order to explore sorting algorithms in an interesting way.
+        I was inspired by videos on Youtube called "The sounds of sorting", wherin bars of various lengths were scrambled and sorted with different algorithms, 
+        and each comparison and swap would play a sound. My take on this was to create a program which would create videos of images being 
+        scrambled and then sorted with the sorting algorithm or algorithms of the user's choice. I made it to support each of the following sorting algorithms:
+    </p>
+    <ul>
+        <li> Bubble Sort </li>
+        <li> Quick Sort </li>
+        <li> Merge Sort </li>
+        <li> Max Heap Sort </li>
+        <li> Min Heap Sort </li>
+        <li> Counting Sort </li>
+        <li> Radix Sort </li>
+    </ul>
+    
+    <p>
+        The visualizer worked by selecting an image file, and then adding a queue of "actions" which would be applied to the image. 
+        These actions could be any of the sorts, a delay, shuffling around each of the pixels in the image, 
+        shuffling around each of the pixels in the image without including that action in the video (doing it instantly),
+        or reversing the image
+    </p>
+
+    <p>
+        The visualizer worked by selecting an image file, and then adding a queue of "actions" which would be applied to the image. 
+        These actions could be any of the sorts, a delay, shuffling around each of the pixels in the image, 
+        shuffling around each of the pixels in the image without including that action in the video (doing it instantly),
+        or reversing the image
+    </p>
+
+    <p> 
+        The following is an example output converted from mp4 into a gif. 
+        The actions queued in this case were delay, shuffle, and min heap sort:
+    </p>
+
+    <img class="mainImage" src="assets/visExample.gif">
+
+    <p>
+        As shown above, these sorts are done on the pixel order in the image. 
+        This was done by using the header only stb_image library to convert the image into an array of pixels, 
+        and then taking that array of rgb pixels and converting it into an array of tuples with it's original place in the image stored as one of the fields.
+        That orignal place was later used as a key in the sorting of these images. The sorting algorithms were implemented in very standard ways, 
+        but even so the visualizations were very interesting, as you could see their properties in the videos.
+        In the above example, due to the image being a gradient, the min heap is clearly shown, and it clearly shows the function of the algorithm.
+        This is one of my favorite projects, even if the code is not the cleanest and the concept is simple, I learned a lot from it overall.
+    </p>
+    <hr>
+    <h2> 
+        Latest Activity
+    </h2>
+
+    <table>
+        <tr>
+            <th>Message:</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>
