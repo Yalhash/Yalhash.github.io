@@ -5,6 +5,7 @@
 $(document).ready(function(){
   // identifier for the sticky navbar
   var navbarID = '#stickyBar';
+  var placeholderID = '#stickyPlaceholder';
   // Get the initial offset position of the navbar
   var stickyOffset = $(navbarID).offset().top;
   
@@ -15,10 +16,12 @@ $(document).ready(function(){
     // stick it to the top of the screen
     if ($(window).scrollTop() > stickyOffset) {
       $(navbarID).addClass('sticky');
+      $(placeholderID).css('display', 'block');
     } else {
       // If the screen is above the navbar unstick it from the top of the screen.
       // If it is already unstuck, this does nothing.
       $(navbarID).removeClass('sticky');
+      $(placeholderID).css('display', 'none');
     }
 
   });

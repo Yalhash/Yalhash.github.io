@@ -84,6 +84,12 @@ a.imgLink:link {
     top: 0;
 }
 
+#stickyPlaceholder {
+    display: none;
+    height: 3.5em;
+    width: 100%;
+}
+
 /*Add some padding to replace the body's missing padding.*/
 .content {
     margin: 8px;
