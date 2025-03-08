@@ -39,7 +39,7 @@
 #searchDropdown {
     display: block;
     background-color: var(--main-color);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px var(--shadow-color);
     z-index: 1;
     padding-top: -1em;
 }
@@ -54,7 +54,7 @@
 
 /* recolor the link boxes on hover */
 #searchDropdown div:hover {
-    background-color: #ddd;
+    background-color: var(--hover-color);
 }
 /* Classes used to toggle hiding the search bar & search results*/
 .hidden {
