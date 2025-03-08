@@ -1,13 +1,18 @@
 /* Color palette: */
+
+/* Vim Kanagawa pallette */
+
 :root {
-    --main-color: #F5EFE6;
-    --alt-color1: #E8DFCA;
-    --alt-color2: #9fb6ca;
-    --alt-color3: #6f92b4;
-    --alt-color1-transparent: #e8dfcac4;
+    --main-color: #1F1F28;
+    --alt-color1: #C8C093;
+    --alt-color2: #161630;
+    --alt-color3: #957FB8;
+    --alt-color1-transparent: #C8C093c4;
     --hover-color: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.2);
 }
+
+
 
 
 html {
@@ -42,16 +47,6 @@ a {
 
 /* Add a background if the link is unvisited */
 a:link {
-    background-color: var(--alt-color1);
-}
-
-a:visited {
-    background-color: var(--main-color);
-}
-
-/* Remove the coloring added on anchored images */
-a.imgLink:visited,
-a.imgLink:link {
     background-color: var(--alt-color1);
 }
 
