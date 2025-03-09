@@ -42,13 +42,14 @@
     </h2>
 
     <p>
-        RoomE was a robot built from the ground up which would out an area using lidar via exploration. I created the
-        code for a majority of the systems including the pathfinding algorithm, the frontier exploration algorithm,
-        interpreting the lidar data, and
-        communicating via USB to the drive train system. The project was a great challenge and included many
-        opportunities to solve algorithmic problems as well as the practical issues that come up with putting a large
-        project together.<br> RoomE
-        had 5 different software components:
+        RoomE was a capstone project on my Computer Science degree. It was a robot built from the ground up which
+        would map an area using lidar. I created a mojority of the programatic logic of the system namely
+        the pathfinding algorithm, the frontier exploration algorithm, the interpretation of lidar data, 
+        communicating via USB to the drive train system, and creating testing infrastructure for the system.
+        The project was a great challenge and included many opportunities to solve algorithmic problems along with
+        practical issues that occurred when constructing the physical product together.
+        <br>
+        RoomE had 5 different software components:
     </p>
 
     <ol>
@@ -86,7 +87,8 @@
         The Lidar Interface is very simplistic, it only takes the output from the lidar module and
         converts it into a data type which can be interpreted by the RoomE Map. The only caveat is that the degree 0 was
         shifted by an integer that
-        was discovered via experimentation. The lidar only gave an array of values denoting how far away each ray was,
+        was discovered via experimentation. I believe this was a manufacturing defect.
+        The lidar only gave an array of values denoting how far away each ray was,
         and the degree that the ray was shot from was denoted by the index in the array, I found that the degree 0 was
         not the 0'th element
         of the array, and found a shift was necessary to find the true zero degree.
