@@ -48,10 +48,10 @@
     </p>
     <p>
         The task ended up having many interesting challenges, and became a great learning opportunity. 
-        First of all, like many modern websites, Twitch generates much of the page via dynamic javascript. This means
+        Like many modern websites, Twitch generates much of the page dynamically, meaning
         it is impossible to simply use a GET request to fetch the page you want to visit and parse the data from there.
-        This is because the resulting HTML which is fetched does not include all of the main content dynamically loaded.
-        My solution was to use the selenium library. This library uses a browser's webdriver to load dynamic content 
+        The HTML from a simple GET request does not include all of the main content dynamically loaded.
+        My solution was to use the selenium library to get all of the dynamic html content. This library uses a browser's webdriver to load dynamic content 
         and interact with the website using scripts to target different elements on the page programatically.
     </p>
 
