@@ -1,0 +1,34 @@
+---
+layout: page
+title: Projects
+subtitle: Things I've built outside of work, from robots to smart contracts.
+permalink: /projects/
+header_link:
+  text: More on GitHub →
+  url: https://github.com/Yalhash
+---
+{%- assign featured = site.data.projects | where: "featured", true -%}
+{%- assign others = site.data.projects | where_exp: "p", "p.featured != true" -%}
+
+{%- for p in featured %}
+<article class="card featured-card">
+  {%- if p.image %}
+  <img class="featured-image" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.name }}">
+  {%- endif %}
+  <div class="card-body featured-body">
+    <p class="meta"><span class="accent-text">Featured</span> · {{ p.dates }}</p>
+    <h2>{{ p.name }}</h2>
+    <p>{{ p.description }}</p>
+    {% include tags.html tags=p.tags %}
+    {%- if p.repo %}
+    <a class="card-link" href="{{ p.repo }}">View on GitHub →</a>
+    {%- endif %}
+  </div>
+</article>
+{%- endfor %}
+
+<div class="grid project-grid">
+  {%- for p in others %}
+  {% include project-card.html project=p %}
+  {%- endfor %}
+</div>

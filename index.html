@@ -1,126 +1,70 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Yousef Al Hashemi">
-    <link rel="stylesheet" href="styles/index.css">
-    <script src="scripts/jquery-3.6.3.min.js"></script>
-    <script src="scripts/stickyNav.js"></script>
-    <script src="scripts/search.js" defer></script>
-    <script src="scripts/toc.js"></script>
-    <script src="scripts/expandImg.js"></script>
-    <script src="scripts/stackoverflowAnswers.js" defer></script>
-
-    <title>Yousef's Portfolio</title>
-</head>
-
-<body>   
-    <div id="overlay" class="hidden"></div>
-    <div class="content">
-        <h1 id="mainTitle">Yousef Al Hashemi</h1>
-        <img id="headshot" src="assets/headshot.jpg" alt="A picture of Yousef Al Hashemi">
+---
+layout: default
+---
+<section class="container hero">
+  <div class="hero-text">
+    <p class="eyebrow">Software Engineer · {{ site.location }}</p>
+    <h1>{{ site.tagline }}</h1>
+    <p class="hero-intro">I'm a software engineer at Altera (formerly part of Intel), working on the compiler flow behind FPGA design tools — caching, runtime, memory, and concurrency.</p>
+    <div class="button-row">
+      <a class="btn btn-dark" href="{{ site.resume | relative_url }}">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download resume
+      </a>
+      <a class="btn btn-outline" href="https://github.com/{{ site.github_username }}">GitHub</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a>
+      <a class="btn btn-outline" href="mailto:{{ site.email }}">Email</a>
     </div>
-    <div id="stickyBar" name="dropdownMenu">
-        <!-- offsite icons -->
-        <a class="imgLink" href="https://github.com/Yalhash"><img id="githubIcon" src="assets/githubIcon.svg"
-                alt="Github logo, linked to my account"></a>
-        <a class="imgLink" href="https://www.linkedin.com/in/yousefalhashemi"><img id="linkedinIcon"
-                src="assets/linkedinIcon.png" alt="LinkedIn logo, linked to my account"></a>
+  </div>
+  <img class="headshot" src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Portrait of {{ site.author.name }}" width="240" height="240">
+</section>
 
-        <!-- Dropdown -->
-        <div class="hamburger">
-            <div class="menubar1"></div>
-            <div class="menubar2"></div>
-            <div class="menubar3"></div>
-
-            <!-- This set of links will become a dropdown menu -->
-            <div class="dropdownLinks">
-                <a href="aboutMe.html"> About Me </a>
-                <a href="roome.html"> RoomE </a>
-                <a href="twitchClips.html"> Twitch Clipper </a>
-                <a href="sortingVisualizer.html"> Sorting Visualizer </a>
-                <a href="resume.pdf"> Resume </a>
-            </div>
+<section class="band">
+  <div class="container about">
+    <div class="about-text">
+      <h2>About</h2>
+      <p>I studied Computer Science at McMaster University, graduating Summa Cum Laude in 2023. At Altera, most of my work sits where performance meets correctness: faster compiles through caching and parallelism, lower memory use on large designs, and sturdier concurrency underneath.</p>
+      <p>Outside work I like building things end to end — robots, scrapers, smart contracts — and reading classic literature. I also enjoy sports and music, and lately I've been typesetting and hand-binding books.</p>
+    </div>
+    <aside class="card now" aria-labelledby="now-heading">
+      <p class="eyebrow" id="now-heading">Now</p>
+      <dl>
+        {%- for row in site.data.now -%}
+          {%- if row.value and row.value != "" %}
+        <div>
+          <dt>{{ row.label }}</dt>
+          <dd>{{ row.value }}</dd>
         </div>
-    </div>
+          {%- endif -%}
+        {%- endfor %}
+      </dl>
+    </aside>
+  </div>
+</section>
 
-    <div id="stickyPlaceholder" class="placeholderOff"></div>
-
-
-    
-
-
-    <div class="content">
-        <!-- First Text Section -->
-        <span name="aboutMeText">
-            <h2>
-                <a id="section0" href="aboutMe.html"> About Me </a>
-            </h2>
-            <p class="SearchIndex_0">
-                I am an undergraduate computer science student at McMaster University, I love programming, hacking, classic
-                liturature, sports, and music. This website mainly focuses on the first two. I interned at Intel from May
-                2020 to August 2021, and at Questrade from May 2022 to August 2022. In the meantime I created the projects
-                listed below.
-            </p>
-        </span>
-
-        <hr/>
-        <h2>
-            Projects
-        </h2>
-        <span name="project1">
-            <h3>
-                <a id="section1" href="roome.html"> RoomE     </a>
-            </h3>
-            <div class="projectDiv">
-                
-                <p class="projectText SearchIndex_1">
-                    RoomE was a capstone project on my Computer Science degree. It was a robot built from the ground up which
-                    would map an area using lidar. I created a mojority of the programatic logic of the system namely
-                    the pathfinding algorithm, the frontier exploration algorithm, the interpretation of lidar data, 
-                    communicating via USB to the drive train system, and creating testing infrastructure for the system.
-                    The project was a great challenge and included many opportunities to solve algorithmic problems along with
-                    practical issues that occurred when constructing the physical product together.
-                </p>
-                <img class="projectImg" src="assets/roome.jpg" alt="A picture of the robot called RoomE">
-            </div>
-        </span>
-        <hr/>
-        <span name="project2">
-            <h3>
-                <a id="section2" href="twitchClips.html"> Twitch Clipper </a>
-            </h3>
-            <div class="projectDiv">
-                
-                <p class="projectText SearchIndex_2">
-                    Twitch Clipper was a scraping bot I made to create 10 minute videos of highlights from twitch streams.
-                    I had the idea when I was watching a video of twitch clips put into a compilation and thought that it was such
-                    a simple task that I could probably automate it. The end result was a bot that given a list of channels and a game will find 
-                    recent popular clips for those channels and edit together a video of those clips.
-                </p>
-                <img class="projectImg" src="assets/twitchLogo.png" alt="A picture of the twitch logo">
-            </div>
-        </span>
-        <hr/>
-        <span name="project3">
-            <h3>
-                <a id="section3" href="sortingVisualizer.html"> Sorting Visualizer </a>
-            </h3>
-            <div class="projectDiv">
-                
-                <p class="projectText SearchIndex_3">
-                    Sorting Visualizer was one of my first personal projects. I made it in order to explore sorting algorithms in an interesting way.
-                    I was inspired by videos on Youtube called "The sounds of sorting", wherin bars of various lengths were scrambled and sorted with different algorithms, 
-                    and each comparison and swap would play a sound. My take on this was to create a program which would create videos of images being 
-                    scrambled and then sorted with the sorting algorithm or algorithms of the user's choice.
-                </p>
-                <img class="projectImg" src="assets/sortingVis.png" alt="A screenshot of the command line interface showing all of the options for the program">
-            </div>
-        </span>
-    </div>
-    
-</body>
-
-</html>
+{%- assign featured = site.data.projects | where: "featured", true | first -%}
+{%- assign latest = site.posts | first -%}
+{%- assign current_job = site.data.experience.jobs | first %}
+<section class="container explore">
+  <h2>Explore</h2>
+  <div class="grid">
+    <a class="card explore-card" href="{{ '/experience/' | relative_url }}">
+      <span class="eyebrow">01</span>
+      <span class="explore-title">Experience</span>
+      <span class="explore-text">Currently {{ current_job.title }} at Altera. Previously Questrade and Intel.</span>
+      <span class="explore-cta">View experience →</span>
+    </a>
+    <a class="card explore-card" href="{{ '/projects/' | relative_url }}">
+      <span class="eyebrow">02</span>
+      <span class="explore-title">Projects</span>
+      <span class="explore-text">{% if featured %}Featured: {{ featured.name }} — {{ featured.description | truncatewords: 12 }}{% else %}Things I've built outside of work.{% endif %}</span>
+      <span class="explore-cta">View projects →</span>
+    </a>
+    <a class="card explore-card" href="{{ '/writing/' | relative_url }}">
+      <span class="eyebrow">03</span>
+      <span class="explore-title">Writing</span>
+      <span class="explore-text">{% if latest %}Latest: {{ latest.title }}{% else %}Notes on software, systems, and whatever else I'm digging into. First posts coming soon.{% endif %}</span>
+      <span class="explore-cta">Read posts →</span>
+    </a>
+  </div>
+</section>

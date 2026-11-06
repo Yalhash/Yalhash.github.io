@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="container page">
+  <div class="page-header">
+    <div>
+      <h1>{{ page.title }}</h1>
+      {%- if page.subtitle %}
+      <p class="lede">{{ page.subtitle }}</p>
+      {%- endif %}
+    </div>
+    {%- if page.header_link %}
+    <a class="header-link" href="{{ page.header_link.url }}">{{ page.header_link.text }}</a>
+    {%- endif %}
+  </div>
+  {{ content }}
+</div>

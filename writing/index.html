@@ -1,0 +1,14 @@
+---
+layout: page
+title: Writing
+subtitle: Notes on software, systems, and whatever else I'm digging into.
+permalink: /writing/
+header_link:
+  text: RSS feed
+  url: /writing/feed.xml
+---
+{%- if site.posts.size > 0 %}
+{% include post-list.html posts=site.posts %}
+{%- else %}
+<p class="empty-state">No posts yet — the first ones are on the way.</p>
+{%- endif %}

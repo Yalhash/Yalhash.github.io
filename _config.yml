@@ -1,0 +1,45 @@
+# Site settings
+title: Yousef Al Hashemi
+tagline: Focused on elegant engineering.
+description: >-
+  Software engineer working on FPGA design tools at Altera. Projects, experience,
+  and writing on things I'm curious about.
+url: "https://yousefalhashemi.com"
+baseurl: ""
+lang: en
+
+author:
+  name: Yousef Al Hashemi
+  email: yousefalhashemi20@gmail.com
+
+# Links used in the header, hero and footer
+email: yousefalhashemi20@gmail.com
+github_username: Yalhash
+linkedin_username: yousefalhashemi
+resume: /resume.pdf
+location: Canada
+
+# Blog
+permalink: /writing/:year/:title/
+words_per_minute: 200
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# All three plugins are supported on GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: writing/feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle
