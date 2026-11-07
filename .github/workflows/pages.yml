@@ -35,6 +35,10 @@ jobs:
 
       - name: Fetch latest resume
         run: ruby scripts/fetch_resume.rb
+        env:
+          # A rebuild triggered by the resume repo passes its commit SHA; fetching that
+          # exact commit avoids GitHub's few-minute cache on the main branch file.
+          RESUME_BRANCH: ${{ github.event.client_payload.sha || 'main' }}
 
       - uses: actions/configure-pages@v5
 
