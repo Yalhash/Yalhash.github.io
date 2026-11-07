@@ -1,0 +1,57 @@
+# Builds the site and deploys it to GitHub Pages.
+# The resume is downloaded from Yalhash/resume (main) at build time, so the
+# deployed resume.pdf is always the latest one.
+#
+# Requires: Settings → Pages → Build and deployment → Source = "GitHub Actions".
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  # Rebuild daily so resume changes show up without touching this repo.
+  schedule:
+    - cron: "17 9 * * *"
+  # Run by hand from the Actions tab after updating the resume.
+  workflow_dispatch:
+  # Lets the resume repo trigger a rebuild (needs a token there; see README).
+  repository_dispatch:
+    types: [resume-updated]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest resume
+        run: ruby scripts/fetch_resume.rb
+
+      - uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,12 @@
+# Fetched at build time from github.com/Yalhash/resume (scripts/fetch_resume.rb)
+resume.pdf
+
+# Jekyll output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Bundler
+.bundle/
+vendor/
