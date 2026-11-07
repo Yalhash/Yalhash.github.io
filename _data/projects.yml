@@ -1,5 +1,7 @@
 # Projects page, in display order. `featured: true` shows a project as the wide card
 # at the top (and on the home page). `image` is optional: a path under /assets/images/.
+# `image_position` (optional) picks which part of a tall/wide image the card shows,
+# as a CSS object-position value: top, bottom, center, "center 30%", ...
 
 - name: BlockFund
   dates: 2025 — now
@@ -13,6 +15,9 @@
 
 - name: Polyglot
   dates: "2026"
+  image: /assets/images/polyglot.png
+  image_alt: The Polyglot window showing a French conversation with English translations and suggested replies
+  image_position: top
   description: >-
     A small always-on-top window that transcribes the other side of a call locally,
     translates it into your language, and suggests replies in theirs at the press of a
