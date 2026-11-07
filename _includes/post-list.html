@@ -1,0 +1,18 @@
+<ul class="post-list">
+  {%- for post in include.posts %}
+  {%- assign words = post.content | number_of_words -%}
+  {%- assign minutes = words | divided_by: site.words_per_minute | at_least: 1 %}
+  <li>
+    <a class="post-row" href="{{ post.url | relative_url }}">
+      <time class="meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+      <span class="post-row-body">
+        <span class="post-row-title">{{ post.title }}</span>
+        {%- if post.summary %}
+        <span class="post-row-summary">{{ post.summary }}</span>
+        {%- endif %}
+        <span class="meta">{% if post.category %}{{ post.category }} · {% endif %}{{ minutes }} min read</span>
+      </span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>

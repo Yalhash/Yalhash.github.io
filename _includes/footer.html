@@ -1,0 +1,13 @@
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-row">
+      {% include email-link.html class="footer-email" %}
+      <div class="footer-links">
+        <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a>
+        <a href="{{ site.resume | relative_url }}">Resume</a>
+      </div>
+    </div>
+    <p class="footer-copy">© {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+  </div>
+</footer>

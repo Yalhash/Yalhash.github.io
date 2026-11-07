@@ -1,0 +1,7 @@
+# The "Now" card on the home page. Leave a value empty to hide that row.
+- label: Working on
+  value: Compile-time caching & runtime at Altera
+- label: Building
+  value: Polyglot, a live call translator
+- label: Reading
+  value: ""

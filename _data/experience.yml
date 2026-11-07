@@ -1,0 +1,45 @@
+# Experience page. Highlights are Markdown, so **bold** works.
+
+jobs:
+  - title: Software Engineer
+    company: Altera (formerly Intel PSG)
+    dates: Jul 2023 — Present
+    highlights:
+      - Parallelized cache generation and optimized the compiled-IP caching flow for a **40% speedup** in cached synthesis, and built the testing infrastructure to track runtime regressions.
+      - Traced a memory doubling through an event-driven GUI flow and cut usage by **50%** — over 6 GB saved on benchmark customer designs, and no more GUI freezes.
+      - Owned the database management system — replaced a faulty locking mechanism and made it thread- and multi-process-safe, enabling new multi-process flows.
+      - Implemented the design-partition Preserve feature, letting users lock finished parts of a design so later compiles run proportionally faster.
+      - Owned the internal netlist writer and directed adding TCL, Python and VHDL output.
+    tags: [C++23, Python, TCL, Concurrency, Profiling]
+
+  - title: Full Stack Engineer Intern
+    company: Questrade
+    dates: May — Aug 2022
+    highlights:
+      - Built an authenticated REST endpoint in TypeScript/NestJS over an internal SQL database, and designed the OpenAPI spec for it and a sibling endpoint.
+      - Instrumented a high-speed messaging system to investigate dropped messages, working with other teams on fixes.
+    tags: [TypeScript, NestJS, SQL]
+
+  - title: Software Engineering Intern
+    company: Intel
+    dates: May 2020 — Aug 2021
+    highlights:
+      - Created the internal netlist writer in C++, converting internal data structures into hardware code to verify their correctness.
+      - Brought a Python analytics service back online after six months down.
+      - Collaborated on a netlist graph visualizer that let users query custom paths through their designs.
+    tags: [C++, Python, XML]
+
+education:
+  - degree: B.A.Sc., Computer Science
+    school: McMaster University
+    detail: Summa Cum Laude · GPA 11.5 / 12
+    dates: 2018 — 2023
+    notes: >-
+      Coursework: algorithms & complexity, data structures, concurrent systems,
+      operating systems, networks & security, databases, machine learning.
+
+skills:
+  - label: Languages
+    items: C++23 · Python · Java · TypeScript · C · TCL · Perl · SQL
+  - label: Tools & systems
+    items: Linux · Git · Bash · Make · NestJS

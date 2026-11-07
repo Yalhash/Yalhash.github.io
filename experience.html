@@ -1,0 +1,54 @@
+---
+layout: page
+title: Experience
+subtitle: Three years shipping performance and reliability work on FPGA design software.
+permalink: /experience/
+header_link:
+  text: Full resume (PDF) →
+  url: /resume.pdf
+---
+{%- assign xp = site.data.experience %}
+<ol class="timeline">
+  {%- for job in xp.jobs %}
+  <li class="timeline-row">
+    <span class="timeline-date meta">{{ job.dates }}</span>
+    <div class="timeline-body">
+      <div>
+        <h2>{{ job.title }}</h2>
+        <p class="muted">{{ job.company }}</p>
+      </div>
+      <ul class="highlights">
+        {%- for h in job.highlights %}
+        <li>{{ h | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+        {%- endfor %}
+      </ul>
+      {% include tags.html tags=job.tags %}
+    </div>
+  </li>
+  {%- endfor %}
+</ol>
+
+<h2 class="section-title">Education</h2>
+<ol class="timeline">
+  {%- for ed in xp.education %}
+  <li class="timeline-row">
+    <span class="timeline-date meta">{{ ed.dates }}</span>
+    <div class="timeline-body">
+      <div>
+        <h3>{{ ed.degree }}</h3>
+        <p class="muted">{{ ed.school }} · {{ ed.detail }}</p>
+      </div>
+      <p class="small">{{ ed.notes }}</p>
+    </div>
+  </li>
+  {%- endfor %}
+</ol>
+
+<div class="skills">
+  {%- for group in xp.skills %}
+  <div>
+    <p class="eyebrow">{{ group.label }}</p>
+    <p>{{ group.items }}</p>
+  </div>
+  {%- endfor %}
+</div>

@@ -1,0 +1,17 @@
+{%- assign p = include.project -%}
+<article class="card project-card">
+  {%- if p.image %}
+  <img class="project-image" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.name }}" loading="lazy"{% if p.image_position %} style="object-position: {{ p.image_position }}"{% endif %}>
+  {%- endif %}
+  <div class="card-body">
+    <div class="card-heading">
+      <h2>{{ p.name }}</h2>
+      <span class="meta">{{ p.dates }}</span>
+    </div>
+    <p>{{ p.description }}</p>
+    {% include tags.html tags=p.tags %}
+    {%- if p.repo %}
+    <a class="card-link" href="{{ p.repo }}">View on GitHub →</a>
+    {%- endif %}
+  </div>
+</article>

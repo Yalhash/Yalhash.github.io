@@ -1,0 +1,10 @@
+{%- comment -%}
+  An email link that scrapers can't read. The page only contains the address in an
+  obfuscated "user@domain (dot) com" form; assets/js/email.js joins the parts from
+  data attributes and turns this into a working mailto link in the browser.
+  Params: class (optional), label (optional: link text to show instead of the address).
+{%- endcomment -%}
+{%- assign obfuscated_domain = site.email_domain | replace: ".", " (dot) " -%}
+<a class="js-email {{ include.class }}" href="#contact" data-user="{{ site.email_user }}" data-domain="{{ site.email_domain }}"{% if include.label %} data-label="{{ include.label }}"{% endif %}>
+  {%- if include.label %}{{ include.label }}{% else %}{{ site.email_user }}@{{ obfuscated_domain }}{% endif -%}
+</a>

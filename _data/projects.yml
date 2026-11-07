@@ -1,0 +1,58 @@
+# Projects page, in display order. `featured: true` shows a project as the wide card
+# at the top (and on the home page). `image` is optional: a path under /assets/images/.
+# `image_position` (optional) picks which part of a tall/wide image the card shows,
+# as a CSS object-position value: top, bottom, center, "center 30%", ...
+
+- name: BlockFund
+  dates: 2025 — now
+  featured: true
+  description: >-
+    An Ethereum smart contract for decentralized crowdfunding. Backers can donate the
+    native coin, ERC-20 tokens, or a mix of both, and the contract uses Uniswap to price
+    tokens against each other and verify when a project has reached its goal.
+  tags: [Ethereum, ERC-20, Uniswap]
+  repo: https://github.com/Yalhash/BlockFund
+
+- name: Polyglot
+  dates: "2026"
+  image: /assets/images/polyglot.png
+  image_alt: The Polyglot window showing a French conversation with English translations and suggested replies
+  image_position: top
+  description: >-
+    A small always-on-top window that transcribes the other side of a call locally,
+    translates it into your language, and suggests replies in theirs at the press of a
+    hotkey.
+  tags: [Python, PyQt6, Whisper]
+  repo: https://github.com/Yalhash/PythonPolyglot
+
+- name: RoomE
+  dates: Capstone · 2021–22
+  image: /assets/images/roome.jpg
+  image_alt: The RoomE robot, with its LIDAR sensor mounted on top
+  description: >-
+    An autonomous robot that explores indoor spaces, maps them with LIDAR, and uploads
+    the maps to a website. I wrote the pathfinding, SLAM, frontier exploration, map data
+    model and serial link to the drive train.
+  tags: [LIDAR, SLAM, Robotics]
+  repo: https://github.com/Yalhash/RoomE
+
+- name: Twitch Clipper
+  dates: "2019"
+  image: /assets/images/twitch-clipper.jpg
+  image_alt: A Super Smash Bros. Melee clip ending on the "Game!" screen
+  image_position: center 40%
+  description: >-
+    A scraper that finds popular recent clips for a list of channels and a game, then
+    edits them into a ~10 minute highlight video automatically.
+  tags: [Python, Selenium, FFmpeg]
+  repo: https://github.com/Yalhash/AutomatedClippingChannel
+
+- name: Sorting Visualizer
+  dates: Early project
+  image: /assets/images/sorting-visualizer.png
+  image_alt: A scrambled image partway through being sorted
+  description: >-
+    Scrambles an image and renders a video of it being sorted back together with the
+    algorithm of your choice — inspired by the "sound of sorting" videos.
+  tags: [Algorithms, Video]
+  repo: https://github.com/Yalhash/sortingVisualizer
