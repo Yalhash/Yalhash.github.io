@@ -10,10 +10,13 @@ lang: en
 
 author:
   name: Yousef Al Hashemi
-  email: yousefalhashemi20@gmail.com
+
+# Email is stored in two parts and only joined by JavaScript in the browser,
+# so the full address never appears in the HTML or RSS feed that scrapers read.
+email_user: yousefalhashemi20
+email_domain: gmail.com
 
 # Links used in the header, hero and footer
-email: yousefalhashemi20@gmail.com
 github_username: Yalhash
 linkedin_username: yousefalhashemi
 resume: /resume.pdf

@@ -13,7 +13,7 @@ layout: default
       </a>
       <a class="btn btn-outline" href="https://github.com/{{ site.github_username }}">GitHub</a>
       <a class="btn btn-outline" href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a>
-      <a class="btn btn-outline" href="mailto:{{ site.email }}">Email</a>
+      {% include email-link.html class="btn btn-outline" label="Email" %}
     </div>
   </div>
   <img class="headshot" src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Portrait of {{ site.author.name }}" width="240" height="240">

@@ -38,6 +38,9 @@
 
 - name: Twitch Clipper
   dates: "2019"
+  image: /assets/images/twitch-clipper.jpg
+  image_alt: A Super Smash Bros. Melee clip ending on the "Game!" screen
+  image_position: center 40%
   description: >-
     A scraper that finds popular recent clips for a list of channels and a game, then
     edits them into a ~10 minute highlight video automatically.
